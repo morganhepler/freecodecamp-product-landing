@@ -1,0 +1,610 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+  
+body {
+    font-family: sans-serif;
+}
+  
+p, li, #email, #submit {
+    line-height: 22px;
+    letter-spacing: 0.75px;
+}
+  
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: fit-content;
+    background: white;
+    padding: 15px 20px;
+    box-shadow: 0 0 8px gray;
+    z-index: 2;
+}
+  
+#header-img {
+    height: 40px;
+}
+  
+#nav-bar {
+    flex-grow: 1;
+    padding: 0 0 0 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 600px;
+}
+  
+#nav-bar a {
+    text-decoration: none;
+    color: black;
+    letter-spacing: 0.75px;
+}
+  
+@media(max-width: 600px) {
+    #nav-bar {
+      flex-direction: column;
+      text-align: right;
+      padding-right: 5px;
+    }
+  
+    #nav-bar a {
+      padding: 1px 0;
+      font-size: 15px;
+    }
+  
+    #header-img {
+      height: 35px;
+    }
+}
+  
+@media(max-width: 350px) {
+    #nav-bar {
+      padding: 0 0 0 30px;
+    }
+  
+    #nav-bar a {
+      font-size: 14px;
+    }
+  
+    #header-img {
+      height: 30px;
+    }
+}
+  
+#intro, #joining, #freeclass {
+    margin: 0 20px;
+}
+  
+h1 {
+    text-align: center;
+    padding: 50px 0;
+    font-size: 36px;
+}
+  
+h1, h2, h3 {
+    text-transform: uppercase;
+    font-style: italic;
+    color: #FF6600;
+}
+  
+h2, h3 {
+    font-size: 30px;
+}
+  
+@media(max-width: 975px) {
+    h1 {
+      font-size: 32px;
+    }
+  
+    h2, h3 {
+      font-size: 26px;
+    }
+}
+  
+.intro-content-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 600px;
+    margin: auto;
+}
+  
+.intro-content-container img {
+    height: 160px;
+    padding-right: 20px;
+}
+  
+.intro-content-container .space-holder {
+    flex-grow: 1;
+}
+  
+.intro-content-text {
+    width: 400px;
+    padding-right: 10px;
+    text-align: left;
+}
+  
+.intro-content-text h2 {
+    padding-bottom: 5px;
+}
+  
+@media(max-width: 550px) {
+    h1 {
+        width: 90%;
+        margin: auto;
+    }
+  
+    .intro-content-container {
+        flex-direction: column;
+    }
+  
+    .intro-content-text {
+        padding-top: 30px;
+        text-align: center;
+        width: 90%;
+    }
+  
+    .intro-content-text h2 {
+        padding-bottom: 10px;
+    }
+}
+  
+#workout h1 {
+    margin: 0 20px;
+}
+  
+#workout h2, .workout-science p {
+    text-align: center;
+}
+  
+.workout-science h2 {
+    padding-bottom: 5px;
+}
+  
+.workout-science {
+    max-width: 750px;
+    width: 90%;
+    margin: auto;
+}
+  
+@media(max-width: 550px) {
+    .workout-science h2 {
+        padding-bottom: 10px;
+    }
+}
+  
+.hr-zone-diagram {
+    display: flex;
+    flex-direction: column;
+}
+  
+.hr-zones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    margin: 30px 0 20px 0;
+}
+  
+.zone-block {
+    padding: 10px 10px;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 18%;
+}
+  
+.zone1 {
+    background: linear-gradient(#878C8F,#575B63);
+    height: 85px;
+}
+  
+.zone2 {
+    background: linear-gradient(#0589BE,#1E3B6B);
+    height: 105px;
+}
+  
+.zone3 {
+    background: linear-gradient(#4DA456,#266B35);
+    height: 125px;
+}
+  
+.zone4 {
+    background: linear-gradient(#E46C32,#D3492F);
+    height: 105px;
+}
+  
+.zone5 {
+    background: linear-gradient(#E92829,#CA213A);
+    height: 85px;
+}
+  
+.percentage {
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 10px 0px;
+    flex-grow: 1;
+}
+  
+.zone2 .percentage, .zone4 .percentage {
+    padding-top: 20px;
+}
+  
+.zone3 .percentage {
+    padding-top: 30px;
+}
+  
+@media(max-width: 784px) {
+    .zone1 {
+        height: 105px;
+    }
+  
+    .zone2 {
+        height: 125px;
+    }
+  
+    .zone3 {
+        height: 145px;
+    }
+  
+    .zone4 {
+        height: 125px;
+    }
+  
+    .zone5 {
+        height: 105px;
+    }
+}
+  
+@media(max-width: 510px) {
+    .hr-zones {
+        flex-direction: column;
+    }
+  
+    .zone-block {
+        width: 140px;
+        margin: auto;
+    }
+  
+    .zone1 {
+        height: 85px;
+    }
+  
+    .zone2 {
+        height: 105px;
+    }
+  
+    .zone3 {
+        height: 125px;
+    }
+  
+    .zone4 {
+        height: 105px;
+    }
+  
+    .zone5 {
+        height: 85px;
+    }
+}
+  
+.hr-zone-caption p {
+    color: #575B63;
+    font-size: 12px;
+    line-height: 16px;
+}
+  
+.workout-expectation h2 {
+    padding: 40px 20px 0 20px;
+}
+  
+.workout-blocks {
+    display: flex;
+    flex-direction: column;
+}
+  
+.workout-block {
+    display: flex;
+    flex-direction: row;
+    padding: 40px 100px;
+    gap: 80px;
+} 
+  
+.workout2 {
+    background-color: #F2F2F2;
+    flex-direction: row-reverse;
+}
+  
+.workout-block img {
+    width: 50%;
+}
+  
+.workout-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    max-width: 425px;
+}
+  
+.workout-info-heading-num {
+    color: black;
+    padding: 0 0 5px 0;
+}
+  
+@media(max-width: 975px) {
+    .workout-block {
+        flex-direction: column-reverse;
+        padding: 40px 0;
+        gap: 20px;
+    }
+  
+    .workout-block img {
+        width: 85%;
+        margin: auto;
+    }
+  
+    .workout-info {
+        flex-direction: row;
+        width: 85%;
+        margin: auto;
+        gap: 40px;
+        max-width: 85%;
+        align-items: flex-end;
+    }
+  
+    .workout-info-heading {
+        flex-grow: 1;
+    }
+}
+  
+@media(max-width: 803px) {
+    .workout-info {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
+  
+#joining h1 {
+    padding-top: 20px;
+}
+  
+.membership-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+    padding-bottom: 50px;
+}
+  
+.membership {
+    width: 22%;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px lightgrey;
+}
+  
+h4 {
+    font-style: italic;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+  
+.membership ul {
+    padding: 0 15px;
+}
+  
+.membership li {
+    padding-bottom: 10px;
+    list-style: url(https://cdn.prod.website-files.com/6337e6fca669d8aab6498d20/633ba8697c095dce81b71ca2_checl.svg);
+}
+  
+.membership li:last-of-type {
+    padding-bottom: 0;
+}
+  
+.membership li p {
+    position: relative;
+    top: -3px;
+    left: 10px;
+    z-index: 1;
+}
+  
+@media(max-width: 1050px) {
+    .membership-container {
+        flex-wrap: wrap;
+    }
+  
+    .membership {
+        width: 45%;
+    }
+}
+  
+@media(max-width: 540px) {
+    .membership {
+        width: 90%;
+    }
+}
+  
+.membership-paragraph {
+    text-align: center;
+    max-width: 750px;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 40px;
+}
+  
+.membership-benefits {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    max-width: 950px;
+    margin: auto;
+    padding: 20px;
+}
+  
+.membership-benefits h2, .membership-benefits ul {
+    width: 50%
+}
+  
+.membership-benefits h2 {
+    padding-right: 50px;
+}
+  
+.membership-benefits ul li {
+    padding: 5px;
+}
+  
+@media(max-width: 700px) {
+    .membership-benefits {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+  
+    .membership-benefits h2, .membership-benefits ul {
+        width: 100%
+    }
+  
+    .membership-benefits h2 {
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+  
+    .membership-benefits ul {
+        padding-left: 20px;
+    }
+  
+    .membership-benefits ul li {
+        padding: 8px;
+    }
+}
+  
+#freeclass h1 {
+    padding-top: 20px;
+}
+  
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+  
+#email {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 50%;
+    max-width: 350px;
+    min-width: 250px;
+    margin: auto;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+  
+#email:focus {
+    outline: none;
+}
+  
+#submit {
+    width: 130px;
+    margin: auto;
+    font-size: 16px;
+    color: white;
+    background-color: #FF6600;
+    border: none;
+    padding: 12px;
+    border-radius: 25px;
+}
+  
+#submit:hover {
+    cursor: pointer;
+    background-color: #E55B00;
+    border: none;
+    padding: 12px;
+    border-radius: 25px;
+}
+  
+#video-container {
+    width: 100%;
+}
+  
+iframe {
+    display: block;
+    margin: auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 750px;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 30px;
+}
+  
+footer {
+    background-color: #F2F2F2;
+}
+  
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 60px 20px;
+    gap: 50px;
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+}
+  
+.footer-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+  
+.footer-icons img {
+    height: 40px;
+}
+  
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 18px;
+}
+  
+.social-icons a {
+    color: black;
+}
+  
+.social-icons a:hover {
+    color: black;
+}
+  
+.footer-content p {
+    font-size: 13px;
+    text-align: left;
+}
+  
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+  
+    .footer-content p {
+        text-align: center;
+    }
+}
